@@ -96,15 +96,12 @@ export default function BuffetScreen({ navigation }) {
       quantity: 0,
     }));
     setItems(resetItems);
-  };
+  }
 
   const renderItem = ({ item }) => (
     <Card style={styles.card} elevation={4}>
       <View style={styles.row}>
-        <Image
-          source={require('./assets/' + item.group + '.png')}
-          style={styles.icon}
-        />
+        <Image source={groupIcons[item.group]} style={styles.icon} />
         <View style={styles.info}>
           {/* Name + Unit remark */}
           <TouchableOpacity onPress={() => toggleUnit(item.id)}>
